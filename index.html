@@ -5,8 +5,9 @@
   <meta name="description" content="Anonymous website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anonymous</title>
+  <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_1.png" type="image/png">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -23,44 +24,182 @@
   <script src="./static/js/index.js"></script>
   
   <style>
-    @keyframes gradient-glow {
-      0% {
-        background-position: 0% 50%;
-        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 0, 255, 0.4));
-      }
-      25% {
-        background-position: 50% 0%;
-        filter: drop-shadow(0 0 15px rgba(255, 107, 53, 0.8)) drop-shadow(0 0 25px rgba(247, 147, 30, 0.4));
-      }
-      50% {
-        background-position: 100% 50%;
-        filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.8)) drop-shadow(0 0 30px rgba(0, 212, 255, 0.4));
-      }
-      75% {
-        background-position: 50% 100%;
-        filter: drop-shadow(0 0 15px rgba(247, 147, 30, 0.8)) drop-shadow(0 0 25px rgba(255, 107, 53, 0.4));
-      }
-      100% {
-        background-position: 0% 50%;
-        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 0, 255, 0.4));
+    body {
+      background-color: #fdfaf4 !important;
+      font-family: 'Playfair Display', serif !important;
+    }
+    
+    .section {
+      background-color: #fdfaf4 !important;
+    }
+    
+    * {
+      font-family: 'Playfair Display', serif !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto Mono', monospace !important;
+    }
+    
+    p, a, span, div, button, input, textarea, label {
+      font-family: 'Playfair Display', serif !important;
+    }
+    
+    .title, .subtitle {
+      font-family: 'Roboto Mono', monospace !important;
+    }
+    
+    .section .title, .section h2.title {
+      font-family: 'Roboto Mono', monospace !important;
+    }
+    
+    /* Video titles styling */
+    .video-title {
+      font-family: 'Roboto Mono', monospace !important;
+    }
+    
+    /* Table of Contents Sidebar */
+    .toc {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 220px;
+      padding: 15px;
+      z-index: 1000;
+      max-height: 80vh;
+      overflow-y: auto;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .toc h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: black;
+      font-family: 'Playfair Display', serif !important;
+    }
+    
+    .toc hr {
+      border: none;
+      border-top: 2px solid black;
+      margin: 10px 0 15px 0;
+    }
+    
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .toc li {
+      margin-bottom: 6px;
+    }
+    
+    .toc a {
+      text-decoration: none;
+      color: black;
+      font-size: 0.85rem;
+      line-height: 1.3;
+      display: block;
+      padding: 2px 4px;
+      transition: all 0.2s ease;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .toc a:hover {
+      color: #555;
+      text-decoration: underline;
+    }
+    
+    .toc-subsection {
+      margin-left: 15px;
+    }
+    
+    .toc-subsection a {
+      font-size: 0.8rem;
+      color: #333;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Hide TOC during hero section */
+    .hero ~ * .toc,
+    .hero + * .toc {
+      display: block;
+    }
+    
+    .hero .toc {
+      display: none;
+    }
+    
+    /* Hide TOC on hero section and small screens */
+    @media (max-width: 1200px) {
+      .toc {
+        display: none;
       }
     }
     
+    /* Show TOC only after hero section */
+    body:not(.hero-active) .toc {
+      display: block;
+    }
+    
+    .hero-section-active .toc {
+      display: none;
+    }
+    
     @media (max-width: 768px) {
-      .gradient-title {
-        font-size: 4rem !important;
+      .title.is-1 {
+        font-size: 3rem !important;
+      }
+      .subtitle.is-1 {
+        font-size: 2rem !important;
+      }
+      .hero-body > div {
+        bottom: 30px !important;
+        left: 30px !important;
+        right: 30px !important;
+        max-width: none !important;
+        min-width: auto !important;
+        padding: 15px 20px !important;
       }
     }
     
     @media (max-width: 480px) {
-      .gradient-title {
-        font-size: 2.5rem !important;
+      .title.is-1 {
+        font-size: 2.2rem !important;
+      }
+      .subtitle.is-1 {
+        font-size: 1.5rem !important;
+      }
+      .hero-body > div {
+        bottom: 20px !important;
+        left: 20px !important;
+        right: 20px !important;
+        padding: 12px 16px !important;
+      }
+      .hero-body p {
+        font-size: 1rem !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- Table of Contents Sidebar -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <hr>
+    <ul>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#real-to-sim">Real-to-sim Reconstruction</a></li>
+      <li><a href="#real-world-results">Real-World Results</a></li>
+      <li><a href="#dataset">UrbanVerse-100K Database</a></li>
+      <li class="toc-subsection"><a href="#dataset-walkthrough">Assets Walkthrough</a></li>
+      <li class="toc-subsection"><a href="#annotation-example">Annotation Example</a></li>
+      <li class="toc-subsection"><a href="#interactive-stats">Interactive Statistics</a></li>
+      <li><a href="#craftbench">CraftBench Test Scenes</a></li>
+    </ul>
+  </div>
 
   <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
     <div class="hero-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
@@ -113,317 +252,343 @@
   </div> -->
 
   <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-1 publication-title is-size-1-mobile gradient-title" style="font-size: 6rem; color: white; animation: gradient-glow 3s ease infinite; text-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6), 0 0 60px rgba(247, 147, 30, 0.4), 0 0 80px rgba(255, 107, 53, 0.3); filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.9));">
-        UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos
+    <div style="position: absolute; bottom: 60px; left: 60px; background-color: rgba(0, 0, 0, 0.4); padding: 15px 25px; border-radius: 12px; backdrop-filter: blur(10px); max-width: 1200px; min-width: 750px;">
+      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 4rem; color: white; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 4px 4px 16px rgba(0, 0, 0, 0.6), 0px 0px 20px rgba(0, 0, 0, 0.4); margin-bottom: 1rem; text-align: left;">
+        UrbanVerse
       </h1>
-      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
-        <!-- From Motion Tracking to Versatile Humanoid Control via Guided Diffusion -->
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 1.8rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
+        Scaling Urban Simulation by Watching City-Tour Videos
       </h1>
-      <p style="font-size: 1.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
-        <a href="">Anonymous Authors</a>
-
-      </p>
+      <!-- <h1 class="subtitle" style="font-size: 1.2rem; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
+        <a href="" style="color: white; text-decoration: none;">Anonymous Authors</a>
+      </h1> -->
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 0.9rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
+        Anonymous Authors
+      </h1>
     </div>
   </div>
 
 </section>
 
-<!-- <section class="section">
+<!-- Miu: Show Abstract Overview Text and Overview Video Demo -->
+<section class="section" id="abstract">
   <div class="container">
+    <div class="has-text-centered" style="margin-bottom: 3rem;">
+      <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">Abstract</h2>
+    </div>
     <div class="columns is-centered">
       <div class="column is-half">
-        <h2 class="title is-2">Video</h2>
-        <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-          <iframe src="https://www.youtube.com/embed/RS_MtKVIAzY"
-                  frameborder="0"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
+          <video autoplay loop muted playsinline controls
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;">
+            <source src="./static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       <div class="column is-half">
-        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p class="abstract-text" style="font-size: 0.95rem; line-height: 1.5;">
-            <!-- Learning skills from human motions offers a promising path toward generalizable policies for whole-body humanoid control, yet two key cornerstones are missing: (1) a scalable, high-quality motion tracking framework that faithfully transforms kinematic references into robust, extremely dynamic motions on real hardware, and (2) a distillation approach that can effectively learn these motion primitives and compose them to solve downstream tasks. We address these gaps with <strong> BeyondMimic, a real-world framework to learn from human motions for versatile and naturalistic humanoid control via guided diffusion </strong>. Our framework provides a <strong> motion tracking pipeline, capable of challenging skills such as jumping spins, sprinting, and cartwheel </strong> with state-of-the-art motion quality. Beyond mimicking, we further introduce a <strong> unified diffusion policy that enables zero-shot task-specific control at test time using simple cost functions </strong>. Deployed on hardware, BeyondMimic performs diverse tasks including waypoint navigation, joystick teleoperation, and obstacle avoidance, bridging sim-to-real motion tracking and flexible synthesis of human motion primitives for whole-body control. -->
+            Urban embodied AI agents, ranging from delivery robots to quadrupeds, are increasingly populating our cities, navigating chaotic streets to provide last-mile connectivity. Training such agents requires diverse, high-fidelity urban environments to scale, yet existing human-crafted or procedurally generated simulation scenes either lack scalability or fail to capture real-world complexity. We introduce UrbanVerse, a data-driven real-to-sim system that converts crowd-sourced city-tour videos into physics-aware, interactive simulation scenes. UrbanVerse consists of: (i) UrbanVerse-100K, a repository of 100k+ annotated urban 3D assets with semantic and physical attributes, and (ii) UrbanVerse-Gen, an automatic pipeline that extracts scene layouts from video and instantiates metric-scale 3D simulations using retrieved assets. Running in IsaacSim, UrbanVerse offers 160 high-quality constructed scenes from 24 countries, along with a curated benchmark of 10 artist-designed test scenes. Experiments show that UrbanVerse scenes preserve real-world semantics and layouts, achieving human-evaluated realism comparable to manually crafted scenes. In urban navigation, policies trained in UrbanVerse exhibit scaling power laws and strong generalization, improving success by +6.3% in simulation and +30.1% in zero-shot sim-to-real transfer comparing to prior methods, accomplishing a 300 m real-world mission with only two interventions.
           </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
-<!-- <section class="section">
+<!-- Miu: Show Real-to-sim Scene Reconstruction Result of UrbanVerse -->
+<section class="section" id="real-to-sim">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Our open-source motion tracking pipline can track motion stably and repeatably</h2>
-    <div class="columns is-centered">
-      <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2643.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2669.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-      </div>
-        <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2661.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+    <div class="has-text-centered" style="margin-bottom: 1rem;">
+      <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">Real-to-sim Scene Reconstruction Result of UrbanVerse.</h2>
+    </div>
+    
+    <!-- City Selection Buttons -->
+    <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+      <button class="button is-primary city-btn active" onclick="showVideo('beijing')" style="margin: 0 0.5rem; background-color: #363636; border-color: #363636;">Beijing</button>
+      <button class="button is-primary city-btn" onclick="showVideo('losangeles')" style="margin: 0 0.5rem; background-color: #dbdbdb; color: #363636; border-color: #dbdbdb;">Los Angeles</button>
+      <button class="button is-primary city-btn" onclick="showVideo('capetown')" style="margin: 0 0.5rem; background-color: #dbdbdb; color: #363636; border-color: #dbdbdb;">Cape Town</button>
+    </div>
+    
+    <!-- Video Container -->
+    <div class="has-text-centered">
+      <video id="beijing-video" class="city-video" autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_Beijing_Video.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1000px; display: block; margin: 0 auto;"></video>
+      <video id="losangeles-video" class="city-video" autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_LosAngeles_Video.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1000px; display: none; margin: 0 auto;"></video>
+      <video id="capetown-video" class="city-video" autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_CapeTown_Video.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1000px; display: none; margin: 0 auto;"></video>
+    </div>
+    
+    <!-- Preview Gallery -->
+    <div class="has-text-centered" style="margin-top: 1rem;">
+      <div style="display: inline-block; position: relative; background-color: #f5f5f5; border-radius: 10px; padding: 15px; max-width: 600px;">
+        <!-- Sliding Indicator Bar -->
+        <div id="indicator-bar" style="position: absolute; top: 10px; left: calc(15px + 0%); width: 33.33%; height: 4px; background-color: #363636; border-radius: 2px; transition: left 0.3s ease;"></div>
+        
+        <!-- Thumbnail Videos -->
+        <div style="display: flex; justify-content: space-between; gap: 10px; margin-top: 10px;">
+          <div class="thumbnail-container" onclick="showVideo('beijing')" style="flex: 1; cursor: pointer; position: relative;">
+            <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_Beijing_Video.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid #363636;"></video>
+            <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; font-weight: bold; color: #363636;">Beijing</div>
+          </div>
+          <div class="thumbnail-container" onclick="showVideo('losangeles')" style="flex: 1; cursor: pointer; position: relative;">
+            <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_LosAngeles_Video.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid transparent;"></video>
+            <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; color: #666;">Los Angeles</div>
+          </div>
+          <div class="thumbnail-container" onclick="showVideo('capetown')" style="flex: 1; cursor: pointer; position: relative;">
+            <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_CapeTown_Video.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid transparent;"></video>
+            <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; color: #666;">Cape Town</div>
+          </div>
+        </div>
       </div>
     </div>
+    
+    <script>
+      function showVideo(city) {
+        // Hide all videos
+        const videos = document.querySelectorAll('.city-video');
+        videos.forEach(video => {
+          video.style.display = 'none';
+          video.pause();
+        });
+        
+        // Show selected video and reset to start
+        const selectedVideo = document.getElementById(city + '-video');
+        selectedVideo.style.display = 'block';
+        selectedVideo.currentTime = 0; // Reset to beginning
+        selectedVideo.play();
+        
+        // Update button styles
+        const buttons = document.querySelectorAll('.city-btn');
+        buttons.forEach(btn => {
+          btn.style.backgroundColor = '#dbdbdb';
+          btn.style.color = '#363636';
+          btn.style.borderColor = '#dbdbdb';
+          btn.classList.remove('active');
+        });
+        
+        // Highlight active button
+        const activeBtn = event.target;
+        if (activeBtn && activeBtn.classList.contains('city-btn')) {
+          activeBtn.style.backgroundColor = '#363636';
+          activeBtn.style.color = 'white';
+          activeBtn.style.borderColor = '#363636';
+          activeBtn.classList.add('active');
+        }
+        
+        // Update thumbnail gallery
+        updateThumbnailGallery(city);
+      }
+      
+      function updateThumbnailGallery(selectedCity) {
+        // Update sliding indicator bar position
+        const indicatorBar = document.getElementById('indicator-bar');
+        const cityPositions = {
+          'beijing': '0%',
+          'losangeles': '33.33%',
+          'capetown': '66.66%'
+        };
+        indicatorBar.style.left = `calc(15px + ${cityPositions[selectedCity]})`;
+        
+        // Update thumbnail borders and labels
+        const thumbnails = document.querySelectorAll('.thumbnail-video');
+        const labels = document.querySelectorAll('.thumbnail-container div');
+        
+        thumbnails.forEach((thumbnail, index) => {
+          const cities = ['beijing', 'losangeles', 'capetown'];
+          const isActive = cities[index] === selectedCity;
+          
+          thumbnail.style.border = isActive ? '2px solid #363636' : '2px solid transparent';
+          labels[index].style.fontWeight = isActive ? 'bold' : 'normal';
+          labels[index].style.color = isActive ? '#363636' : '#666';
+        });
+        
+        // Update button colors to match selected city
+        updateButtonColors(selectedCity);
+      }
+      
+      function updateButtonColors(selectedCity) {
+        // Reset all buttons to inactive state
+        const buttons = document.querySelectorAll('.city-btn');
+        buttons.forEach(btn => {
+          btn.style.backgroundColor = '#dbdbdb';
+          btn.style.color = '#363636';
+          btn.style.borderColor = '#dbdbdb';
+          btn.classList.remove('active');
+        });
+        
+        // Find and highlight the correct button based on city
+        const cityButtonMap = {
+          'beijing': 0,
+          'losangeles': 1,
+          'capetown': 2
+        };
+        
+        const activeButtonIndex = cityButtonMap[selectedCity];
+        if (activeButtonIndex !== undefined && buttons[activeButtonIndex]) {
+          const activeBtn = buttons[activeButtonIndex];
+          activeBtn.style.backgroundColor = '#363636';
+          activeBtn.style.color = 'white';
+          activeBtn.style.borderColor = '#363636';
+          activeBtn.classList.add('active');
+        }
+      }
+      
+      // Initialize the gallery on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        updateThumbnailGallery('beijing');
+      });
+    </script>
   </div>
-</section> -->
+</section>
 
-<section class="section">
+<script>
+  // Hide TOC during hero section, show it afterwards
+  document.addEventListener('DOMContentLoaded', function() {
+    const toc = document.querySelector('.toc');
+    const heroSection = document.querySelector('.hero');
+    
+    // Initially hide TOC
+    if (toc) {
+      toc.style.display = 'none';
+    }
+    
+    // Show TOC when scrolling past hero section
+    window.addEventListener('scroll', function() {
+      if (!toc || !heroSection) return;
+      
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.pageYOffset;
+      
+      if (scrollPosition > heroBottom - 100) {
+        toc.style.display = 'block';
+      } else {
+        toc.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+<!-- Miu: Real World Results -->
+<section class="section" id="real-world-results">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Real-to-sim Scene Reconstruction Result of UrbanVerse</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      <!-- Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>. -->
-    </p>
-    <div id="results-carousel" class="carousel results-carousel">
-      <!-- highlights -->
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- cartwheel -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_Beijing_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- running -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2747.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- jumping 360 -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_CapeTown_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- fall recovery -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2704.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- dance -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- shuffling -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2706.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- handwave dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2715.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- social dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2718.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- full dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2750.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- before handwave dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2711.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- missing !!! -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2707.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- getup -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- getup0 -->
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_Beijing_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <!-- getup1 -->
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_CapeTown_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_LosAngeles_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- getup2 -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_LosAngeles_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- getup3 -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2667.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- others -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- jumping -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2671.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- fancy jumping -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2676.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- sports -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2678.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- grandma walk -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2688.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- jogging -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2689.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- sprint -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2720.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- walking -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- quick spinning -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2652.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- high knees -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2725.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- happy walking -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2745.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- march -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2686.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
+    <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+      <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">Real-World Urban Navigation Results of PPO-UrbanVerse on Diverse Street Environments.</h2>
+    </div>
+    <div class="has-text-centered">
+      <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1000px; margin: 0 auto;"></video>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- Miu: UrbanVerse-100K Dataset Walkthrough and Interactive Statistics -->
+<section class="section" id="dataset">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Zero-shot Sim-to-real Generalization Results of UrbanVerse across Diverse Public Streets</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      <!-- Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>. -->
-    </p>
-    <div id="results-carousel" class="carousel results-carousel">
-       <div class="column is-full-width is-centered has-text-centered">
-        <!-- getup0 -->
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <!-- getup1 -->
+    <div class="has-text-centered" style="margin-bottom: 3rem;">
+      <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">UrbanVerse-100K Asset Database</h2>
+    </div>
+    <!-- First row: Video and Annotation Image -->
+    <div class="columns" style="margin-bottom: 2rem;">
+      <!-- Left side - Video -->
+      <div class="column is-half">
+        <div class="has-text-centered" style="margin-bottom: 1rem;" id="dataset-walkthrough">
+          <h3 class="title is-5" style="background-color: black; color: white; padding: 6px 12px; display: inline-block; margin: 0; font-weight: normal; font-size: 1rem;">Object Assets Walkthrough.</h3>
+        </div>
+        <div class="has-text-centered">
+          <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-100K-Database_Videos-and-Distribution/UrbanVerse-100K-Flythrough_Videos.mov" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 100%; max-width: 100%;"></video>
+        </div>
+      </div>
+      
+      <!-- Right side - Annotation Image -->
+      <div class="column is-half">
+        <div class="has-text-centered" style="margin-bottom: 1rem;" id="annotation-example">
+          <h3 class="title is-5" style="background-color: black; color: white; padding: 6px 12px; display: inline-block; margin: 0; font-weight: normal; font-size: 1rem;">Example of per-object Annotation.</h3>
+        </div>
+        <div class="has-text-centered">
+          <img src="static/urbanverse_images/anno_attributes_dark_v2.png" alt="Example of per-object Annotation" style="border-radius: 10px; width: 100%; max-width: 100%; border: 1px solid #ddd;">
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">UrbanVerse-100K Dataset Walkthrough</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      <!-- Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>. -->
-    </p>
-    <div id="results-carousel" class="carousel results-carousel">
-       <div class="column is-full-width is-centered has-text-centered">
-        <!-- getup0 -->
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-100K-Database_Videos-and-Distribution/UrbanVerse-100K-Flythrough_Videos.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <!-- getup1 -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">CraftBench Test Scenes</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      <!-- Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>. -->
-    </p>
-    <div id="results-carousel" class="carousel results-carousel">
-      <!-- highlights -->
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- cartwheel -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_Beijing_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- running -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2747.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- jumping 360 -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_CapeTown_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- fall recovery -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2704.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- dance -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- shuffling -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2706.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- handwave dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2715.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- social dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2718.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- full dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2750.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- before handwave dance -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2711.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- missing !!! -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2707.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- getup -->
-      <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_01.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_02.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_03.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_04.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_05.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_06.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_07.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_08.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_09.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-        <video autoplay loop muted playsinline src="static/urbanverse_videos/CraftBench-Scene_Videos/scene_10.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- getup2 -->
-        <!-- <video autoplay loop muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/Simulation-Scene-Generation_LosAngeles_Video.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- getup3 -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2667.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- others -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- jumping -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2671.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- fancy jumping -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2676.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- sports -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2678.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- grandma walk -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2688.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- jogging -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2689.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- sprint -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2720.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-
-      <!-- walking -->
-      <!-- <div class="column is-full-width is-centered has-text-centered">
-        <!-- quick spinning -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2652.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- high knees -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2725.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-      <div class="column is-full-width is-centered has-text-centered">
-        <!-- happy walking -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2745.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-        <!-- march -->
-        <!-- <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2686.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video> -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">UrbanVerse-100K Interactive Dataset Statistics</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      Explore the hierarchical distribution of objects, buildings, vehicles, and urban elements in our comprehensive UrbanVerse-100K dataset through this interactive visualization.
-    </p>
-    <div class="columns is-centered">
+    
+    <!-- Second row: Interactive Statistics -->
+    <div class="columns">
       <div class="column is-full">
+        <div class="has-text-centered" style="margin-bottom: 1rem;" id="interactive-stats">
+          <h3 class="title is-5" style="background-color: black; color: white; padding: 6px 12px; display: inline-block; margin: 0; font-weight: normal; font-size: 1rem;">Interactive Statistics of Object Category Distributions in UrbanVerse-100K.</h3>
+        </div>
+        <p class="has-text-centered" style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;">
+          <strong>Interactive Features:</strong> Click on any segment to drill down into subcategories. Use the center to navigate back up the hierarchy.
+          <a href="./UrbanVerse-100K_Interactive_Distribution.html" target="_blank" class="button is-link is-small" style="margin-left: 1rem;">
+            <span class="icon">
+              <i class="fas fa-external-link-alt"></i>
+            </span>
+            <span>Better View in Full Screen</span>
+          </a>
+        </p>
         <div style="position: relative; width: 100%; height: 800px; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <iframe 
-            src="./UrbanVerse-100K-Interactive-Statistics-Visualization.html" 
+            src="./UrbanVerse-100K_Interactive_Distribution.html" 
             width="100%" 
             height="100%" 
             frameborder="0"
             style="border: none;">
-            Your browser does not support iframes. Please <a href="./UrbanVerse-100K-Interactive-Statistics-Visualization.html" target="_blank">click here to view the interactive visualization</a>.
+            Your browser does not support iframes. Please <a href="./UrbanVerse-100K_Interactive_Distribution.html" target="_blank">click here to view the interactive visualization</a>.
           </iframe>
         </div>
-        <p class="has-text-centered" style="font-size: 1rem; margin-top: 1rem; color: #666;">
-          <strong>Interactive Features:</strong> Click on any segment to drill down into subcategories. Use the center to navigate back up the hierarchy.
-          <br>
-          <a href="./UrbanVerse-100K-Interactive-Statistics-Visualization.html" target="_blank" class="button is-link is-small" style="margin-top: 0.5rem;">
-            <span class="icon">
-              <i class="fas fa-external-link-alt"></i>
-            </span>
-            <span>Open in Full Screen</span>
-          </a>
-        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Miu: Show 10 CraftBench Test Scenes -->
+<section class="section" id="craftbench">
+  <div class="container">
+    <div class="has-text-centered" style="margin-bottom: 2rem;">
+      <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">CraftBench Test Scenes Gallery.</h2>
+    </div>
+    <div class="columns is-centered" style="margin-bottom: 0.2rem;">
+      <div class="column is-half is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_06.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 01</p>
+      </div>
+      <div class="column is-half is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_08.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 02</p>
+      </div>
+    </div>
+    <div class="columns is-centered" style="margin-bottom: 0.2rem;">
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 03</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_02.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 04</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_03.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 05</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_04.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 06</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_05.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 07</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_07.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 08</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_09.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 09</p>
+      </div>
+      <div class="column is-quarter is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_10.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 10</p>
       </div>
     </div>
   </div>
