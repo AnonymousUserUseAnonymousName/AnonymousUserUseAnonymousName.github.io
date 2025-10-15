@@ -1426,28 +1426,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Advanced Video Loading Optimization
   document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer for smart video loading
-    const videoObserver = new IntersectionObserver((entries) => {
+    // One-time, non-flashing hydration: never call load() on scroll
+    const hydratedOnce = new WeakSet();
+    const videoObserver = new IntersectionObserver((entries, io) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const video = entry.target;
-          // Only load videos that are about to be viewed
-          if (video.preload === 'none' || !video.preload) {
-            video.preload = 'metadata';
-          }
-          // Start loading when 50% visible
-          if (entry.intersectionRatio >= 0.5) {
-            video.load();
-          }
+        if (!entry.isIntersecting) return;
+        const video = entry.target;
+        if (hydratedOnce.has(video) || video.dataset._hydrated === '1') {
+          io.unobserve(video);
+          return;
         }
+        // If src was deferred via data-src, attach it now; avoid load()
+        if (video.dataset && video.dataset.src && !video.src) {
+          video.src = video.dataset.src;
+        }
+        // Ensure minimal fetching without reinitializing the element
+        if (!video.preload || video.preload === 'none') {
+          video.preload = 'metadata';
+        }
+        video.dataset._hydrated = '1';
+        hydratedOnce.add(video);
+        io.unobserve(video);
       });
     }, {
-      rootMargin: '100px 0px', // Start loading 100px before entering viewport
-      threshold: [0, 0.25, 0.5, 0.75, 1]
+      rootMargin: '300px 0px',
+      threshold: 0.15
     });
 
-    // Observe all videos for lazy loading
+    // Observe only videos that may be deferred; skip already-hydrated ones
     document.querySelectorAll('video').forEach(video => {
+      if (video.dataset && video.dataset._hydrated === '1') return;
+      if (hydratedOnce.has(video)) return;
       videoObserver.observe(video);
     });
 
