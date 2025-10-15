@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="UrbanVerse">
+  <meta name="description" content="Anonymous website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UrbanVerse</title>
+  <title>UrbanVerse Anonymous Project Page</title>
   <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_0.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -22,8 +22,6 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <link rel="preload" as="video" href="./static/urbanverse_videos/short_teaser_v10.mp4" type="video/mp4" crossorigin fetchpriority="high">
-  <link rel="preload" as="video" href="./static/urbanverse_videos/long_teaser_v9.mp4" type="video/mp4" fetchpriority="high">
   
   <style>
     body {
@@ -273,35 +271,29 @@
 
   <section class="hero is-link is-fullheight video" id="hero" style="overflow: hidden; position:relative;">
     <div class="hero-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
-      <video class="hero-video-el" playsinline autoplay muted loop preload="auto" loading="eager" fetchpriority="high" poster="./static/urbanverse_images/hero_poster.png" style="width: 100%; height: 100%; object-fit: cover; background-color: #000;">
-        <source src="./static/urbanverse_videos/short_teaser_v9_muted.mp4" type="video/mp4" fetchpriority="high">
+      <video playsinline autoplay muted loop preload="auto" loading="eager" poster="./static/urbanverse_images/hero_poster.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <source src="./static/urbanverse_videos/short_teaser_v9_muted.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-video is-hidden-tablet is-inline-block-mobile"
       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
-      <video class="hero-video-el" playsinline autoplay muted loop preload="auto" loading="eager" fetchpriority="high" poster="./static/urbanverse_images/hero_poster.png" style="width: 100%; height: 100%; object-fit: cover; background-color: #000;">
-        <source src="./static/urbanverse_videos/short_teaser_v9_muted.mp4" type="video/mp4" fetchpriority="high">
+      <video playsinline autoplay muted loop preload="auto" loading="eager" poster="./static/urbanverse_images/hero_poster.png"style="width: 100%; height: 100%; object-fit: cover;">
+        <source src="./static/urbanverse_videos/short_teaser_v9_muted.mp4" type="video/mp4">
       </video>
     </div>
     <div class="overlay"></div>
-    <!-- Hero loading overlay -->
-    <div id="hero-loading" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;">
-      <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(6px); border-radius: 10px; padding: 10px 14px; min-width: 200px; text-align: center;">
-        <div style="color:#fff; font-family: 'Roboto Mono', monospace; font-size: 0.9rem; margin-bottom: 6px;">Loading video… <span id="hero-progress-text">0%</span></div>
-        <div style="height: 6px; width: 220px; background: rgba(255,255,255,0.25); border-radius: 4px; overflow: hidden;">
-          <div id="hero-progress-bar" style="height:100%; width:0%; background:#ffffff;"></div>
-        </div>
-      </div>
-    </div>
 
   <div class="hero-body">
     <div style="position: absolute; bottom: 60px; left: 60px; background-color: rgba(0, 0, 0, 0.4); padding: 15px 25px; border-radius: 12px; backdrop-filter: blur(10px); max-width: 1200px; min-width: 750px;">
       <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 4rem; color: white; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 4px 4px 16px rgba(0, 0, 0, 0.6), 0px 0px 20px rgba(0, 0, 0, 0.4); margin-bottom: 1rem; text-align: left;">
         UrbanVerse
       </h1>
-      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 1.8rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0.8rem; text-align: left;">
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 1.8rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
         Scaling Urban Simulation by Watching City-Tour Videos
       </h1>
+      <!-- <h1 class="subtitle" style="font-size: 1.2rem; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
+        <a href="" style="color: white; text-decoration: none;">Anonymous Authors</a>
+      </h1> -->
       <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 0.9rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); margin-bottom: 0; text-align: left;">
         Anonymous Authors
       </h1>
@@ -333,7 +325,6 @@
     <div class="has-text-centered" style="margin-bottom: 3rem;">
       <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">Overview (unmute for the best audio experience).</h2>
     </div>
-
     <div class="has-text-centered" style="margin-bottom: 2rem;">
       <p style="font-size: 1.2rem; color: #333; max-width: 1400px; margin: 0 auto;">Introducing <strong>UrbanVerse</strong> — a system that converts real-world urban scenes from city-tour videos into physics-aware, interactive simulation environments</p>
       <p style="font-size: 1.2rem; color: #333; max-width: 1400px; margin: 0 auto;">enabling scalable robot learning in urban spaces with real-world generalization.</p>
@@ -341,8 +332,8 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-          <video id="overview-video" autoplay muted loop playsinline controls controlslist="nodownload" oncontextmenu="return false;"
-                 preload="auto" loading="eager" fetchpriority="high"
+          <video autoplay muted loop playsinline controls controlslist="nodownload" oncontextmenu="return false;"
+                 preload="metadata" loading="lazy"
                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; pointer-events: auto;"
                  draggable="false">
             <source src="./static/urbanverse_videos/long_teaser_v8.mp4" type="video/mp4">
@@ -455,10 +446,10 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-          <video id="beijing-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_beijing_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: block;"></video>
-          <video id="losangeles-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_los_angeles_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
-          <video id="capetown-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_capetown_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
-          <video id="tangier-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_tangier_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          <video id="beijing-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_beijing_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: block;"></video>
+          <video id="losangeles-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_los_angeles_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          <video id="capetown-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_capetown_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          <video id="tangier-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_tangier_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
         </div>
       </div>
     </div>
@@ -726,7 +717,7 @@
           <h3 class="title is-5" style="background-color: black; color: white; padding: 6px 12px; display: inline-block; margin: 0; font-weight: normal; font-size: 1rem;">Object Assets Walkthrough.</h3>
         </div>
         <div class="has-text-centered">
-          <video autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/UrbanVerse-100K-Database_Videos-and-Distribution/UrbanVerse-100K-Flythrough_Videos.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 100%; max-width: 100%;"></video>
+          <video autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/UrbanVerse-100K-Database_Videos-and-Distribution/UrbanVerse-100K-Flythrough_Videos.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 100%; max-width: 100%;"></video>
         </div>
       </div>
       
@@ -800,47 +791,47 @@
     </div>
     <div class="columns is-centered" style="margin-bottom: 0.2rem;">
       <div class="column is-half is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_06.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_06.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 01</p>
       </div>
       <div class="column is-half is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_08.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_08.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 02</p>
       </div>
     </div>
     <div class="columns is-centered" style="margin-bottom: 0.2rem;">
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 03</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_02.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_02.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 04</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_03.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_03.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 05</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_04.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_04.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 06</p>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_05.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_05.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 07</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_07.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_07.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 08</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_09.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_09.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 09</p>
       </div>
       <div class="column is-quarter is-centered has-text-centered">
-        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none"  src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_10.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        <video autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="./static/urbanverse_videos/CraftBench-Scene_Videos/scene_10.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
         <p class="video-title" style="font-weight: normal; font-size: 1rem; margin-top: 0.2rem; color: #333;">Scene 10</p>
       </div>
     </div>
@@ -858,7 +849,7 @@
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
           <video autoplay muted loop playsinline controls controlslist="nodownload"
-                 preload="metadata"
+                 preload="metadata" loading="lazy"
                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;">
             <source src="./static/urbanverse_videos/city_tour_montage.mp4" type="video/mp4">
           </video>
@@ -888,9 +879,9 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-           <video id="sorrento-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" src="static/urbanverse_videos/recon_videos_3x/sorrento_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
-           <video id="rek2-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" src="static/urbanverse_videos/recon_videos_3x/rek2_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
-          <video id="rek-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata"  src="static/urbanverse_videos/recon_videos_3x/rek_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: block;"></video>
+          <video id="sorrento-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/recon_videos_3x/sorrento_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          <video id="rek2-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/recon_videos_3x/rek2_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          <video id="rek-video" class="distillation-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/recon_videos_3x/rek_dirty.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: block;"></video>
         </div>
       </div>
     </div>
@@ -927,7 +918,7 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-          <video autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
+          <video autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
         </div>
       </div>
     </div>
@@ -950,13 +941,13 @@
     
     <!-- Video Container -->
     <div class="has-text-centered">
-        <video id="scene02-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/masked_coco_sbs_v2_s02_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-        <video id="scene04-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/masked_coco_sbs_v2_s04_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-        <video id="scene05-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s05_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: block; margin: 0 auto;"></video>
-        <video id="scene06-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s06_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-        <video id="scene07-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s07_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-        <video id="scene09-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s09_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-        <video id="customized-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_customized_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="scene02-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/masked_coco_sbs_v2_s02_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="scene04-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/masked_coco_sbs_v2_s04_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="scene05-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s05_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: block; margin: 0 auto;"></video>
+      <video id="scene06-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s06_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="scene07-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s07_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="scene09-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_s09_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="customized-video" class="scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_COCO_3x/coco_sbs_v2_customized_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
     </div>
     
     <!-- Preview Gallery -->
@@ -1122,13 +1113,13 @@
     
     <!-- Go2 Video Container -->
     <div class="has-text-centered">
-      <video id="s01-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s01_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-      <video id="s03-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s03_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-      <video id="s04-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s04_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: block; margin: 0 auto;"></video>
-      <video id="s05-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s05_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-      <video id="s07-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s07_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-      <video id="s14-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s14_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
-      <video id="s16-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s16_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s01-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s01_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s03-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s03_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s04-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="metadata" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s04_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: block; margin: 0 auto;"></video>
+      <video id="s05-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s05_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s07-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s07_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s14-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s14_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
+      <video id="s16-video" class="go2-scene-video" autoplay loop muted playsinline controlslist="nodownload" preload="none" loading="lazy" src="static/urbanverse_videos/SideBySide_Go2_3x/go2_sbs_v2_s16_hq.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; width: 85%; max-width: 1200px; display: none; margin: 0 auto;"></video>
     </div>
     
     <!-- Go2 Preview Gallery -->
@@ -1362,48 +1353,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Video Protection Script -->
 <script>
-  // Hero loading progress (best-effort using progress and canplay events)
-  document.addEventListener('DOMContentLoaded', function() {
-    const heroVideos = document.querySelectorAll('.hero-video-el');
-    const overlay = document.getElementById('hero-loading');
-    const bar = document.getElementById('hero-progress-bar');
-    const text = document.getElementById('hero-progress-text');
-    if (!heroVideos.length || !overlay || !bar || !text) return;
-
-    let maxPercent = 0;
-    function updateProgress(pct) {
-      const clamped = Math.max(maxPercent, Math.min(99, Math.floor(pct)));
-      maxPercent = clamped;
-      bar.style.width = clamped + '%';
-      text.textContent = clamped + '%';
-    }
-
-    function hideOverlay() {
-      bar.style.width = '100%';
-      text.textContent = '100%';
-      setTimeout(() => { overlay.style.display = 'none'; }, 150);
-    }
-
-    heroVideos.forEach(v => {
-      // Some browsers fire progress; compute buffered ratio if duration known
-      v.addEventListener('progress', () => {
-        try {
-          if (v.duration && v.buffered && v.buffered.length) {
-            const end = v.buffered.end(v.buffered.length - 1);
-            const pct = (end / v.duration) * 100;
-            updateProgress(pct);
-          }
-        } catch (_) {}
-      });
-      // When enough data to start playing
-      v.addEventListener('loadeddata', () => updateProgress(25));
-      v.addEventListener('canplay', () => updateProgress(60));
-      v.addEventListener('canplaythrough', () => updateProgress(90));
-      v.addEventListener('playing', hideOverlay, { once: true });
-      v.addEventListener('error', () => { text.textContent = 'Error'; });
-    });
-  });
-
   // Disable right-click context menu globally
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -1460,12 +1409,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Disable text selection globally, except in BibTeX section
+  // Disable text selection globally
   document.addEventListener('selectstart', function(e) {
-    // Allow text selection in BibTeX section
-    if (e.target.closest('#bibtex')) {
-      return true;
-    }
     e.preventDefault();
     return false;
   });
@@ -1479,24 +1424,28 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
   });
 
-  // Advanced Video Loading Optimization (non-flashing hydration)
+  // Advanced Video Loading Optimization
   document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer to hydrate "data-src" videos once without forcing load()
+    // One-time, non-flashing hydration: never call load() on scroll
+    const hydratedOnce = new WeakSet();
     const videoObserver = new IntersectionObserver((entries, io) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const video = entry.target;
-        if (video.dataset._hydrated === '1') {
+        if (hydratedOnce.has(video) || video.dataset._hydrated === '1') {
           io.unobserve(video);
           return;
         }
-        if (video.dataset.src && !video.src) {
+        // If src was deferred via data-src, attach it now; avoid load()
+        if (video.dataset && video.dataset.src && !video.src) {
           video.src = video.dataset.src;
         }
-        if (video.preload === 'none' || !video.preload) {
+        // Ensure minimal fetching without reinitializing the element
+        if (!video.preload || video.preload === 'none') {
           video.preload = 'metadata';
         }
         video.dataset._hydrated = '1';
+        hydratedOnce.add(video);
         io.unobserve(video);
       });
     }, {
@@ -1504,9 +1453,10 @@ document.addEventListener('DOMContentLoaded', function() {
       threshold: 0.15
     });
 
-    // Observe only videos that declare data-src (skip already-sourced videos)
-    document.querySelectorAll('video[data-src]').forEach(video => {
-      if (video.dataset._hydrated === '1') return;
+    // Observe only videos that may be deferred; skip already-hydrated ones
+    document.querySelectorAll('video').forEach(video => {
+      if (video.dataset && video.dataset._hydrated === '1') return;
+      if (hydratedOnce.has(video)) return;
       videoObserver.observe(video);
     });
 
@@ -1523,55 +1473,6 @@ document.addEventListener('DOMContentLoaded', function() {
         video.preload = 'metadata';
       }
     });
-
-    // Progressive, section-ordered hydration for non-critical videos (no load() to avoid flashes)
-    const sectionOrder = ['abstract', 'real-to-sim', 'dataset', 'craftbench', 'city-tour-collection', 'scene-distillation', 'real-world-results'];
-    const isThumb = (el) => el.classList && (
-      el.classList.contains('thumbnail-video') ||
-      el.classList.contains('scene-thumbnail-video') ||
-      el.classList.contains('go2-scene-thumbnail-video') ||
-      el.classList.contains('distillation-thumbnail-video')
-    );
-    const isCritical = (el) => el.id === 'overview-video' || el.classList.contains('hero-video-el');
-
-    const videosInOrder = [];
-    sectionOrder.forEach(sectionId => {
-      const sectionEl = document.getElementById(sectionId);
-      if (!sectionEl) return;
-      sectionEl.querySelectorAll('video').forEach(v => {
-        if (isThumb(v) || isCritical(v)) return; // skip thumbnails and critical videos
-        videosInOrder.push(v);
-      });
-    });
-
-    let queueIndex = 0;
-    const maxParallel = 2;
-    function hydrateBatch(deadline) {
-      let started = 0;
-      while (queueIndex < videosInOrder.length && started < maxParallel && (!deadline || deadline.timeRemaining() > 8)) {
-        const v = videosInOrder[queueIndex++];
-        if (v.dataset._priorityHydrated === '1') continue;
-        if (v.preload === 'none' || !v.preload) {
-          v.preload = 'metadata';
-        }
-        v.dataset._priorityHydrated = '1';
-        started++;
-      }
-      if (queueIndex < videosInOrder.length) {
-        if (window.requestIdleCallback) {
-          requestIdleCallback(hydrateBatch, { timeout: 1000 });
-        } else {
-          setTimeout(hydrateBatch, 200);
-        }
-      }
-    }
-    if (videosInOrder.length) {
-      if (window.requestIdleCallback) {
-        requestIdleCallback(hydrateBatch, { timeout: 1000 });
-      } else {
-        setTimeout(hydrateBatch, 200);
-      }
-    }
 
     // Optimize video switching for better performance
     const cityVideos = document.querySelectorAll('.city-video');
@@ -1606,24 +1507,8 @@ document.addEventListener('DOMContentLoaded', function() {
       optimizeVideoSwitching(distillationVideos, sceneIndex);
       if (originalShowDistillationScene) originalShowDistillationScene(sceneName);
     };
-
-    // Ensure overview video autoplay when visible (some browsers throttle second autoplay)
-    const overviewVideo = document.getElementById('overview-video');
-    if (overviewVideo) {
-      const playWhenVisible = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            overviewVideo.play().catch(() => {});
-          } else {
-            overviewVideo.pause();
-          }
-        });
-      }, { root: null, threshold: 0.25 });
-      playWhenVisible.observe(overviewVideo);
-    }
   });
 </script>
 
-
 </body>
-</html>
+</html> -->
