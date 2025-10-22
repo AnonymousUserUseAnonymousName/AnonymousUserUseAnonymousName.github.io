@@ -267,6 +267,18 @@
       }
     }
   </style>
+  <style>
+    /* Center overlay play button for deferred videos */
+    .center-play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 78px; height: 78px; border-radius: 50%; border: none; cursor: pointer;
+      background: rgba(0, 0, 0, 0.6); color: #fff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    .center-play-btn i { font-size: 30px; }
+    .center-play-btn:hover { background: rgba(0, 0, 0, 0.75); }
+    .center-play-btn.hidden { display: none; }
+  </style>
 </head>
 
 <body>
@@ -921,7 +933,8 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-          <video autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
+          <video id="zeroshot-video" loop muted playsinline controls controlslist="nodownload" preload="none" data-defer="click" src="static/urbanverse_videos/UrbanVerse-Policy-Real-World-Deployment-Videos/Zero-shot-Sim-to-real-Generalization-Results_Video.mp4" poster="./static/urbanverse_images/thumbnail_zeroshot.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
+          <button id="zeroshot-play" class="center-play-btn" aria-label="Play video"><i class="fas fa-play"></i></button>
         </div>
       </div>
     </div>
@@ -1277,7 +1290,8 @@
     <div class="columns is-centered">
       <div class="column is-full">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
-          <video autoplay loop muted playsinline controls src="static/urbanverse_videos/long_horizon.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
+          <video id="long-horizon-video" loop muted playsinline controls preload="none" data-defer="click" src="static/urbanverse_videos/long_horizon.mp4" poster="./static/urbanverse_images/thumbnail_long_hori_masked.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover;"></video>
+          <button id="long-horizon-play" class="center-play-btn" aria-label="Play video"><i class="fas fa-play"></i></button>
         </div>
       </div>
     </div>
@@ -1534,6 +1548,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!sectionEl) return;
       sectionEl.querySelectorAll('video').forEach(v => {
         if (isThumb(v) || isCritical(v)) return; // skip thumbnails and critical videos
+        if (v.dataset && v.dataset.defer === 'click') return; // respect click-deferred videos
         videosInOrder.push(v);
       });
     });
@@ -1602,7 +1617,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Ensure overview video autoplay when visible (some browsers throttle second autoplay)
-    const overviewVideo = document.getElementById('overview-video');
+  const overviewVideo = document.getElementById('overview-video');
+  const zeroShotVideo = document.getElementById('zeroshot-video');
+  const longHorizonVideo = document.getElementById('long-horizon-video');
     if (overviewVideo) {
       const playWhenVisible = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1615,6 +1632,36 @@ document.addEventListener('DOMContentLoaded', function() {
       }, { root: null, threshold: 0.25 });
       playWhenVisible.observe(overviewVideo);
     }
+
+  // Attach click-to-load behavior for zero-shot video if deferred
+  function attachClickBuffer(videoEl) {
+    if (!videoEl || !videoEl.dataset || videoEl.dataset.defer !== 'click') return;
+    const enableOnFirstPlay = () => {
+      videoEl.preload = 'metadata';
+      videoEl.removeEventListener('play', enableOnFirstPlay);
+    };
+    videoEl.addEventListener('play', enableOnFirstPlay);
+  }
+  attachClickBuffer(zeroShotVideo);
+  attachClickBuffer(longHorizonVideo);
+
+  // Wire overlay play buttons
+  function setupOverlayPlay(videoId, buttonId) {
+    const video = document.getElementById(videoId);
+    const btn = document.getElementById(buttonId);
+    if (!video || !btn) return;
+    const hideBtn = () => btn.classList.add('hidden');
+    const showBtn = () => btn.classList.remove('hidden');
+    btn.addEventListener('click', () => {
+      hideBtn();
+      video.play().catch(() => { showBtn(); });
+    });
+    video.addEventListener('play', hideBtn);
+    video.addEventListener('pause', showBtn);
+    video.addEventListener('ended', showBtn);
+  }
+  setupOverlayPlay('zeroshot-video', 'zeroshot-play');
+  setupOverlayPlay('long-horizon-video', 'long-horizon-play');
   });
 </script>
 
