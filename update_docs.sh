@@ -32,8 +32,9 @@ echo "📦 Deploying to docs/ folder..."
 rm -rf docs/*
 cp -r documentation/_build/current/* docs/
 
-# Fix absolute paths in HTML files (sphinxcontrib.icon issue)
+# Fix absolute paths in HTML files
 echo "🔧 Fixing absolute paths for GitHub Pages..."
+# Fix FontAwesome paths
 find docs/ -name "*.html" -type f -exec sed -i '' \
   -e 's|href="/Users/[^"]*fontawesome-free/css/all.min.css"|href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"|g' \
   -e 's|src="/Users/[^"]*fontawesome-free/js/all.min.js"|src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"|g' \
@@ -41,6 +42,24 @@ find docs/ -name "*.html" -type f -exec sed -i '' \
 find docs/ -name "*.html" -type f -exec sed -i \
   -e 's|href="/Users/[^"]*fontawesome-free/css/all.min.css"|href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"|g' \
   -e 's|src="/Users/[^"]*fontawesome-free/js/all.min.js"|src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"|g' \
+  {} \;
+
+# Remove canonical URLs with absolute paths (they can cause issues with private repos)
+find docs/ -name "*.html" -type f -exec sed -i '' \
+  -e 's|<link rel="canonical" href="https://[^"]*github\.io[^"]*" />||g' \
+  {} \; 2>/dev/null || \
+find docs/ -name "*.html" -type f -exec sed -i \
+  -e 's|<link rel="canonical" href="https://[^"]*github\.io[^"]*" />||g' \
+  {} \;
+
+# Convert any absolute paths starting with /docs/ to relative
+find docs/ -name "*.html" -type f -exec sed -i '' \
+  -e 's|href="/docs/|href="./|g' \
+  -e 's|src="/docs/|src="./|g' \
+  {} \; 2>/dev/null || \
+find docs/ -name "*.html" -type f -exec sed -i \
+  -e 's|href="/docs/|href="./|g' \
+  -e 's|src="/docs/|src="./|g' \
   {} \;
 
 echo "✅ Documentation updated successfully!"

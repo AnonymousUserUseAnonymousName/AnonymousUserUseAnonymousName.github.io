@@ -233,8 +233,8 @@ html_show_sphinx = False
 html_last_updated_fmt = ""  # to reveal the build date in the pages meta
 
 # Fix paths for GitHub Pages deployment
-# Set base URL for GitHub Pages (adjust if your repo name is different)
-html_baseurl = "https://anonymoususeruseanonymousname.github.io/docs/"
+# Don't set html_baseurl - it causes absolute URLs
+# html_baseurl = ""  # Leave empty for relative paths
 # Ensure all paths are relative
 html_use_index = True
 
