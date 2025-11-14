@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/Users/miu/GoldsGym/AnonymousUserUseAnonymousName.github.io/documentation/venv/lib/python3.14/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/home/hollis/anaconda3/envs/urbansim/lib/python3.10/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
@@ -47,7 +47,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="/Users/miu/GoldsGym/AnonymousUserUseAnonymousName.github.io/documentation/venv/lib/python3.14/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="/home/hollis/anaconda3/envs/urbansim/lib/python3.10/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0.1" />
-    <meta name="docbuild:last-update" content="Nov 14, 2025"/>
+    <meta name="docbuild:last-update" content="Jul 04, 2025"/>
   </head>
   
   
@@ -634,22 +634,6 @@
     <span class="k">return</span> <span class="n">env</span>
 </pre></div>
 </div>
-<p>While the <cite>COCO</cite> robot is the default example used in our tasks, we understand that many users may work with other platforms.
-To facilitate this, we also provide two additional robot configurations out of the box:</p>
-<ul class="simple">
-<li><p><cite>go2.py</cite>: Unitree Go2 robot configuration (quadruped locomotion)</p></li>
-<li><p><cite>g1.py</cite>: Unitree G1 robot configuration (humanoid locomotion)</p></li>
-<li><p><cite>anymal_c.py</cite>: ANYmal C robot configuration (quadruped locomotion)</p></li>
-</ul>
-<p>These files follow the same structure and conventions as <cite>coco.py</cite>, making it easy to reuse task logic across different platforms.</p>
-<p>If you wish to add support for a new robot:</p>
-<ol class="arabic simple">
-<li><p><strong>Create a new config file</strong> under <cite>urbansim/primitives/robot/</cite>, e.g., <cite>myrobot.py</cite>.</p></li>
-<li><p><strong>Define its articulation config</strong>, including URDF path, actuators, and initial state.</p></li>
-<li><p><strong>Implement or reuse</strong> an action space class that suits your control interface (e.g., velocity-based, waypoint-based, joint command).</p></li>
-<li><p><strong>(Optional)</strong> Provide a <cite>ModifyEnv</cite> function to adjust sensor placements, terminations, or robot-specific resets.</p></li>
-<li><p><strong>Register</strong> your robot into the environment configuration (e.g., <cite>random_env_cfg.py</cite>) or pass it dynamically at runtime.</p></li>
-</ol>
 </section>
 <section id="id1">
 <h3>Takeaway<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
@@ -753,7 +737,7 @@ By Honglin He
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Nov 14, 2025.
+  Last updated on Jul 04, 2025.
   <br/>
 </p>
   </div>

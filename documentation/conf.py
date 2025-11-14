@@ -232,12 +232,6 @@ html_show_copyright = True
 html_show_sphinx = False
 html_last_updated_fmt = ""  # to reveal the build date in the pages meta
 
-# Fix paths for GitHub Pages deployment
-# Don't set html_baseurl - it causes absolute URLs
-# html_baseurl = ""  # Leave empty for relative paths
-# Ensure all paths are relative
-html_use_index = True
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
