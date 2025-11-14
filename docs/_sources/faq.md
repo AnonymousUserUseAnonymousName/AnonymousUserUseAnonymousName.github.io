@@ -10,6 +10,10 @@ If you meet the error `ModuleNotFoundError: No module named 'xxx'`, ensure that 
 source _isaac_sim/setup_conda_env.sh
 ```
 
+## Known Issue with `zsh`
+
+IsaacSim has limited compatibility with `zsh`. If you encounter unexpected behavior (e.g., UI not showing, runtime errors) when running with `zsh`, please switch to `bash` before launching Isaac Sim.
+
 ## CUDA & GLIBCXX Incompatibility
 
 URBAN-SIM relies on many libraries and systems like NVIDIA Isaac Sim, which requires support of `libstdc++` for successful runtime.  

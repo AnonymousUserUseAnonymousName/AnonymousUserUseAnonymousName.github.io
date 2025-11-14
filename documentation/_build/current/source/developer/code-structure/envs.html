@@ -33,7 +33,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/home/hollis/anaconda3/envs/urbansim/lib/python3.10/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Users/miu/GoldsGym/AnonymousUserUseAnonymousName.github.io/documentation/venv/lib/python3.14/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
@@ -47,7 +47,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="/home/hollis/anaconda3/envs/urbansim/lib/python3.10/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="/Users/miu/GoldsGym/AnonymousUserUseAnonymousName.github.io/documentation/venv/lib/python3.14/site-packages/sphinxcontrib/icon/node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -60,7 +60,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0.1" />
-    <meta name="docbuild:last-update" content="Jul 04, 2025"/>
+    <meta name="docbuild:last-update" content="Nov 14, 2025"/>
   </head>
   
   
@@ -456,7 +456,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-files">Core Files</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-summary">Workflow Summary</a></li>
 </ul>
             </nav>
@@ -475,7 +478,8 @@
 These classes wrap around the simulation backend and manager-based modular design from IsaacLab, enabling scalable, customizable RL environments.</p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>### Core Files</p>
+<section id="core-files">
+<h3>Core Files<a class="headerlink" href="#core-files" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p><cite>abstract_env.py</cite>
 Defines the <cite>AbstractEnv</cite> class, a base class that wraps around <cite>ManagerBasedEnv</cite>. It handles:
@@ -509,19 +513,17 @@ Contains task-specific environment subclasses:</p>
 </li>
 </ul>
 <p>The hierarchy is:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt><cite>ManagerBasedRLEnv</cite> (from IsaacLab)</dt><dd><p>⬇</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><cite>AbstractRLEnv</cite> (URBAN-SIM RL base class)</dt><dd><p>⬇</p>
-</dd>
-</dl>
-</li>
+<ul>
+<li><p><cite>ManagerBasedRLEnv</cite> (from IsaacLab)
+- <cite>AbstractRLEnv</cite> (URBAN-SIM RL base class)</p>
+<blockquote>
+<div><ul class="simple">
 <li><p><cite>PGEnv</cite>, <cite>PredefinedEnv</cite>, etc. (concrete tasks)</p></li>
 </ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
 </section>
 <section id="workflow-summary">
 <h2>Workflow Summary<a class="headerlink" href="#workflow-summary" title="Permalink to this heading">#</a></h2>
@@ -585,7 +587,10 @@ Invoked automatically for terminated environments, handles curriculum, randomnes
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-files">Core Files</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-summary">Workflow Summary</a></li>
 </ul>
   </nav></div>
@@ -620,7 +625,7 @@ By Honglin He
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Jul 04, 2025.
+  Last updated on Nov 14, 2025.
   <br/>
 </p>
   </div>
