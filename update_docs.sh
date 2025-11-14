@@ -32,6 +32,17 @@ echo "📦 Deploying to docs/ folder..."
 rm -rf docs/*
 cp -r documentation/_build/current/* docs/
 
+# Fix absolute paths in HTML files (sphinxcontrib.icon issue)
+echo "🔧 Fixing absolute paths for GitHub Pages..."
+find docs/ -name "*.html" -type f -exec sed -i '' \
+  -e 's|href="/Users/[^"]*fontawesome-free/css/all.min.css"|href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"|g' \
+  -e 's|src="/Users/[^"]*fontawesome-free/js/all.min.js"|src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"|g' \
+  {} \; 2>/dev/null || \
+find docs/ -name "*.html" -type f -exec sed -i \
+  -e 's|href="/Users/[^"]*fontawesome-free/css/all.min.css"|href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"|g' \
+  -e 's|src="/Users/[^"]*fontawesome-free/js/all.min.js"|src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"|g' \
+  {} \;
+
 echo "✅ Documentation updated successfully!"
 echo ""
 echo "📁 Updated files are in: docs/"
