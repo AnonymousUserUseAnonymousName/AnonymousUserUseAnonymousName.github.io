@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UrbanVerse-1K Dataset Spotlight">
+  <title>UrbanVerse | UrbanVerse-1K Showcase</title>
+  <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_0.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <style>
+    :root {
+      --uv-bg: #fdfaf4;
+      --uv-text: #333;
+      --uv-dark: #363636;
+    }
+
+    body {
+      background-color: var(--uv-bg);
+      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .video-page {
+      width: 100%;
+    }
+
+    .intro-block {
+      margin-bottom: 2rem;
+    }
+
+    .intro-block h1,
+    .intro-block h2,
+    .intro-block p {
+      color: var(--uv-text);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      background: #000;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      outline: none;
+    }
+
+    .caption {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--uv-dark);
+      text-align: center;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: var(--uv-dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link a:hover {
+      border-color: var(--uv-dark);
+    }
+
+    .image-gallery {
+      margin: 2rem 0;
+    }
+
+    .image-gallery .column {
+      padding: 0.5rem;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section video-page">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered intro-block">
+        <h1 class="title is-1">UrbanVerse-1K Database Gallery</h1>
+      </div>
+      
+      <p class="caption">
+        We present a fly-through video showcasing over 500 metric-accurate 3D object assets from the UrbanVerse-1K database, ranging from small household items to large structures such as skyscrapers. 
+      </p>
+
+      <p class="caption">
+        <span style="color: #06741e; font-weight: 600;">
+          Please pay attention to the realistic relative scales between objects, which demonstrate the high-quality metric annotations of UrbanVerse-1K.
+        </span>
+      </p>
+
+
+
+      <div class="video-wrapper">
+        <video autoplay muted loop controls playsinline preload="auto">
+          <!-- Replace the src below with the actual video path you want to showcase -->
+          <source src="./static/urbanverse_videos/UrbanVerse-100K-Database_Videos-and-Distribution/UrbanVerse-100K-Flythrough_Videos.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <p class="caption">
+        Below, we also provide a few examples of object assets within the same category to showcase their diversity.
+      </p>
+      
+
+      <div class="image-gallery">
+        <div class="columns">
+          <div class="column is-half">
+            <img src="./static/new_assets/obj_gallery_barriers.png" alt="Barriers Gallery">
+          </div>
+          <div class="column is-half">
+            <img src="./static/new_assets/obj_gallery_buildings.png" alt="Buildings Gallery">
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <img src="./static/new_assets/obj_gallery_street_infra.png" alt="Street Infrastructure Gallery">
+          </div>
+          <div class="column is-half">
+            <img src="./static/new_assets/obj_gallery_vehicles.png" alt="Vehicles Gallery">
+          </div>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a href="./index.html">← Back to UrbanVerse home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</body>
+</html>
+
+

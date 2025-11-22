@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UrbanVerse Scene Gallery">
+  <title>UrbanVerse | Scene Gallery</title>
+  <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_0.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <style>
+    :root {
+      --uv-bg: #fdfaf4;
+      --uv-text: #333;
+      --uv-dark: #363636;
+    }
+
+    body {
+      background-color: var(--uv-bg);
+      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .video-page {
+      width: 100%;
+    }
+
+    .intro-block {
+      margin-bottom: 2rem;
+    }
+
+    .intro-block h1,
+    .intro-block h2,
+    .intro-block p {
+      color: var(--uv-text);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      background: #000;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      outline: none;
+    }
+
+    .caption {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--uv-dark);
+      text-align: center;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: var(--uv-dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link a:hover {
+      border-color: var(--uv-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section video-page">
+    <div class="container is-max-desktop">
+      <div class="caption" style="margin-bottom: 0.0rem;">
+        <h1 class="title is-1">UrbanVerse Scene Gallery</h1>
+        <p>
+          In this page, we <strong>(1)</strong> first present a real-to-sim side-by-side comparison of UrbanVerse's scene generation results, and <strong>(2)</strong> then showcase 20 additional scenes sampled from our repository of 160 UrbanVerse-generated environments.
+        </p>
+        <p class="caption">
+          <span style="color: #06741e; font-weight: 600;">
+            Please scroll down to see all the scenes
+          </span>
+        </p>
+    </div>
+
+  <!-- Miu: Show Real-to-sim Scene Generation Result of UrbanVerse -->
+  <section class="section" id="real-to-sim">
+    <div class="container">
+      <div class="has-text-centered" style="margin-bottom: 1rem;">
+        <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">Real-to-sim Scene Generation Results of UrbanVerse.</h2>
+      </div>
+
+      <!-- City Selection Buttons -->
+      <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+        <button class="button is-primary city-btn active" onclick="showVideo('beijing')" style="margin: 0 0.5rem; background-color: #363636; border-color: #363636; font-family: 'Roboto Mono', monospace;">Beijing</button>
+        <button class="button is-primary city-btn" onclick="showVideo('losangeles')" style="margin: 0 0.5rem; background-color: #dbdbdb; color: #363636; border-color: #dbdbdb; font-family: 'Roboto Mono', monospace;">Los Angeles</button>
+        <button class="button is-primary city-btn" onclick="showVideo('capetown')" style="margin: 0 0.5rem; background-color: #dbdbdb; color: #363636; border-color: #dbdbdb; font-family: 'Roboto Mono', monospace;">Cape Town</button>
+        <button class="button is-primary city-btn" onclick="showVideo('tangier')" style="margin: 0 0.5rem; background-color: #dbdbdb; color: #363636; border-color: #dbdbdb; font-family: 'Roboto Mono', monospace;">Tangier</button>
+      </div>
+      
+      <!-- Video Container -->
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: none; outline: none;">
+            <video id="beijing-video" class="city-video" autoplay loop muted playsinline controls controlslist="nodownload" preload="metadata" src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_beijing_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: block;"></video>
+            <video id="losangeles-video" class="city-video" loop muted playsinline controls controlslist="nodownload" preload="none" data-src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_los_angeles_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+            <video id="capetown-video" class="city-video" loop muted playsinline controls controlslist="nodownload" preload="none" data-src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_capetown_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+            <video id="tangier-video" class="city-video" loop muted playsinline controls controlslist="nodownload" preload="none" data-src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_tangier_twin.mp4" poster="./static/videos/loading-icon.gif" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 0; outline: none; object-fit: cover; display: none;"></video>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Preview Gallery -->
+      <div class="has-text-centered" style="margin-top: 1rem;">
+        <div style="display: inline-block; position: relative; background-color: #f5f5f5; border-radius: 10px; padding: 15px; max-width: 600px;">
+          <!-- Sliding Indicator Bar -->
+          <div id="indicator-bar" style="position: absolute; top: 10px; left: calc(15px + 0%); width: 25%; height: 4px; background-color: #363636; border-radius: 2px; transition: left 0.3s ease;"></div>
+          
+          <!-- Thumbnail Videos -->
+          <div style="display: flex; justify-content: space-between; gap: 10px; margin-top: 10px;">
+            <div class="thumbnail-container" onclick="showVideo('beijing')" style="flex: 1; cursor: pointer; position: relative;">
+              <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_beijing_twin.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid #363636;"></video>
+              <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; font-weight: bold; color: #363636;">Beijing</div>
+            </div>
+            <div class="thumbnail-container" onclick="showVideo('losangeles')" style="flex: 1; cursor: pointer; position: relative;">
+              <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_los_angeles_twin.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid transparent;"></video>
+              <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; color: #666;">Los Angeles</div>
+            </div>
+            <div class="thumbnail-container" onclick="showVideo('capetown')" style="flex: 1; cursor: pointer; position: relative;">
+              <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_capetown_twin.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid transparent;"></video>
+              <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; color: #666;">Cape Town</div>
+            </div>
+            <div class="thumbnail-container" onclick="showVideo('tangier')" style="flex: 1; cursor: pointer; position: relative;">
+              <video class="thumbnail-video" muted playsinline src="static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_tangier_twin.mp4" style="width: 100%; height: 80px; object-fit: cover; border-radius: 5px; border: 2px solid transparent;"></video>
+              <div style="text-align: center; margin-top: 5px; font-size: 0.8rem; color: #666;">Tangier</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        function showVideo(city) {
+          // Hide all videos
+          const videos = document.querySelectorAll('.city-video');
+          videos.forEach(video => {
+            video.style.display = 'none';
+            video.pause();
+          });
+          
+          // Show selected video and reset to start
+          const selectedVideo = document.getElementById(city + '-video');
+          selectedVideo.style.display = 'block';
+          
+          // Load video source if it's deferred (Los Angeles, Cape Town, Tangier)
+          if (selectedVideo.dataset.src && !selectedVideo.src) {
+            selectedVideo.src = selectedVideo.dataset.src;
+            selectedVideo.preload = 'metadata';
+          }
+          
+          selectedVideo.currentTime = 0; // Reset to beginning
+          selectedVideo.play();
+          
+          // Update button styles
+          const buttons = document.querySelectorAll('.city-btn');
+          buttons.forEach(btn => {
+            btn.style.backgroundColor = '#dbdbdb';
+            btn.style.color = '#363636';
+            btn.style.borderColor = '#dbdbdb';
+            btn.classList.remove('active');
+          });
+          
+          // Highlight active button
+          const activeBtn = event.target;
+          if (activeBtn && activeBtn.classList.contains('city-btn')) {
+            activeBtn.style.backgroundColor = '#363636';
+            activeBtn.style.color = 'white';
+            activeBtn.style.borderColor = '#363636';
+            activeBtn.classList.add('active');
+          }
+          
+          // Update thumbnail gallery
+          updateThumbnailGallery(city);
+        }
+        
+        function updateThumbnailGallery(selectedCity) {
+          // Update sliding indicator bar position
+          const indicatorBar = document.getElementById('indicator-bar');
+          const cityPositions = {
+            'beijing': '0%',
+            'losangeles': '25%',
+            'capetown': '50%',
+            'tangier': '75%'
+          };
+          indicatorBar.style.left = `calc(15px + ${cityPositions[selectedCity]})`;
+          
+          // Update thumbnail borders and labels
+          const thumbnails = document.querySelectorAll('.thumbnail-video');
+          const labels = document.querySelectorAll('.thumbnail-container div');
+          
+          thumbnails.forEach((thumbnail, index) => {
+            const cities = ['beijing', 'losangeles', 'capetown', 'tangier'];
+            const isActive = cities[index] === selectedCity;
+            
+            thumbnail.style.border = isActive ? '2px solid #363636' : '2px solid transparent';
+            labels[index].style.fontWeight = isActive ? 'bold' : 'normal';
+            labels[index].style.color = isActive ? '#363636' : '#666';
+          });
+          
+          // Update button colors to match selected city
+          updateButtonColors(selectedCity);
+        }
+        
+        function updateButtonColors(selectedCity) {
+          // Reset all buttons to inactive state
+          const buttons = document.querySelectorAll('.city-btn');
+          buttons.forEach(btn => {
+            btn.style.backgroundColor = '#dbdbdb';
+            btn.style.color = '#363636';
+            btn.style.borderColor = '#dbdbdb';
+            btn.classList.remove('active');
+          });
+          
+          // Find and highlight the correct button based on city
+          const cityButtonMap = {
+            'beijing': 0,
+            'losangeles': 1,
+            'capetown': 2,
+            'tangier': 3
+          };
+          
+          const activeButtonIndex = cityButtonMap[selectedCity];
+          if (activeButtonIndex !== undefined && buttons[activeButtonIndex]) {
+            const activeBtn = buttons[activeButtonIndex];
+            activeBtn.style.backgroundColor = '#363636';
+            activeBtn.style.color = 'white';
+            activeBtn.style.borderColor = '#363636';
+            activeBtn.classList.add('active');
+          }
+        }
+        
+        // Initialize the gallery on page load
+        document.addEventListener('DOMContentLoaded', function() {
+          updateThumbnailGallery('beijing');
+        });
+      </script>
+
+      <div class="has-text-centered" style="margin: 1rem;">
+        <h2 class="title is-4" style="background-color: black; color: white; padding: 8px 16px; display: inline-block; margin: 0; font-weight: normal; font-size: 1.2rem;">More UrbanVerse Scenes</h2>
+      </div>
+      
+      <div class="columns is-centered" style="margin-bottom: 0.2rem;">
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_08_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Asia_Turkey_Istanbul_walk_04.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_02_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Asia_Japan_Kyoto_walk_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_beijing_5x/bj_02_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_03_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_04_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_beijing_5x/bj_05_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_05_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_beijing_5x/bj_03_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Africa_SouthAfrica_CapeTown_drive_05.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_06_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_07_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Asia_Vietnam_HoChiMinhCity_walk_21.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_beijing_5x/bj_04_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Europe_France_Paris_drive_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_09_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/Europe_Germany_Karlsruhe_05.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_others/NorthAmerica_UnitedStates_LosAngeles_drive_01.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_10_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Hide TOC during hero section, show it afterwards
+    document.addEventListener('DOMContentLoaded', function() {
+      const toc = document.querySelector('.toc');
+      const heroSection = document.querySelector('.hero');
+      
+      // Initially hide TOC
+      if (toc) {
+        toc.style.display = 'none';
+      }
+      
+      // Show TOC when scrolling past hero section
+      window.addEventListener('scroll', function() {
+        if (!toc || !heroSection) return;
+        
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.pageYOffset;
+        
+        if (scrollPosition > heroBottom - 100) {
+          toc.style.display = 'block';
+        } else {
+          toc.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+
+      <div class="back-link">
+        <a href="./index.html">← Back to UrbanVerse home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</body>
+</html>
+
+

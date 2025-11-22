@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UrbanVerse Scene Gallery">
+  <title>UrbanVerse | Scene Gallery</title>
+  <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_0.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <style>
+    :root {
+      --uv-bg: #fdfaf4;
+      --uv-text: #333;
+      --uv-dark: #363636;
+    }
+
+    body {
+      background-color: var(--uv-bg);
+      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .video-page {
+      width: 100%;
+    }
+
+    .intro-block {
+      margin-bottom: 2rem;
+    }
+
+    .intro-block h1,
+    .intro-block h2,
+    .intro-block p {
+      color: var(--uv-text);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      background: #000;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      outline: none;
+    }
+
+    .caption {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--uv-dark);
+      text-align: center;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: var(--uv-dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link a:hover {
+      border-color: var(--uv-dark);
+    }
+
+    .video-column-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .comparison-divider {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.1rem 15px;
+      min-height: 100%;
+    }
+
+    .comparison-divider::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      bottom: 20%;
+      width: 2px;
+      border-left: 2px dashed #4a4a4a;
+      transform: translateX(-50%);
+    }
+
+    .comparison-divider span {
+      position: relative;
+      background-color: var(--uv-bg);
+      padding: 0 10px;
+      font-style: italic;
+      color: #4a4a4a;
+      font-size: 1.2rem;
+      font-weight: 600;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section video-page">
+    <div class="container is-max-desktop">
+      <div class="caption" style="margin-bottom: 0.0rem;">
+        <h1 class="title is-1">UrbanVerse <em>vs.</em> Urban-Sim</h1>
+        <p class="subtitle is-4">
+          A Comparison Between UrbanVerse’s Data-Driven Real-to-Sim Scenes (left) and Procedurally Generated (PG) Urban-Sim Scenes (right)
+        </p>
+    
+        <p class="caption">
+          <span style="color: #8B0000; font-weight: 600;">
+            As shown below, PG scenes rely on hard-coded rules and templates, typically placing objects along sidewalks or roads at fixed intervals. As a result, they often fail to capture the diversity and richness of real-world environments.
+          </span>
+        </p>
+    
+        <p class="caption">
+          <span style="color: #06741e; font-weight: 600;">
+            In contrast, UrbanVerse’s data-driven real-to-sim approach produces scenes that are faithfully grounded in real-world layouts extracted from city-tour videos.
+          </span>
+        </p>
+      </div>
+    </div>
+    
+    
+
+  <!-- Miu: Show Real-to-sim Scene Generation Result of UrbanVerse -->
+  <section class="section" id="real-to-sim">
+    <div class="container">
+
+      <div class="columns is-centered" style="margin-bottom: 1rem;">
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_moroco_5x/morocco_00_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #06741e;">UrbanVerse (Ours)</strong></p>
+        </div>
+        <div class="column is-narrow comparison-divider">
+          <span><em>vs.</em></span>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/comp_pg_scenes/compressed_Collected_PG_World8.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #8B0000;">Urban-Sim (PG)</strong></p>
+        </div>
+      </div>
+
+      <div class="columns is-centered" style="margin-bottom: 1rem;">
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_capetown_twin.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #06741e;">UrbanVerse (Ours)</strong></p>
+        </div>
+        <div class="column is-narrow comparison-divider">
+          <span><em>vs.</em></span>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/comp_pg_scenes/compressed_Collected_PG_World4.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #8B0000;">Urban-Sim (PG)</strong></p>
+        </div>
+      </div>
+
+      <div class="columns is-centered" style="margin-bottom: 1rem;">
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/UrbanVerse-Gen-Scene_Videos/new_los_angeles_twin.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #06741e;">UrbanVerse (Ours)</strong></p>
+        </div>
+        <div class="column is-narrow comparison-divider">
+          <span><em>vs.</em></span>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/comp_pg_scenes/compressed_Collected_PG_World2.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #8B0000;">Urban-Sim (PG)</strong></p>
+        </div>
+      </div>
+
+      <div class="columns is-centered" style="margin-bottom: 1rem;">
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/cousins_beijing_5x/bj_05_digital.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #06741e;">UrbanVerse (Ours)</strong></p>
+        </div>
+        <div class="column is-narrow comparison-divider">
+          <span><em>vs.</em></span>
+        </div>
+        <div class="column is-quarter is-centered has-text-centered video-column-content">
+          <video autoplay loop muted playsinline  src="./static/urbanverse_videos/comp_pg_scenes/compressed_Collected_PG_World0.mp4" poster="./static/videos/loading-icon.gif" style="border-radius: 10px; margin: 0.1rem 0.5rem;"></video>
+          <p class="caption" style="font-size: 1rem; max-width: 1200px; margin: 0 auto;"><strong style="color: #8B0000;">Urban-Sim (PG)</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Hide TOC during hero section, show it afterwards
+    document.addEventListener('DOMContentLoaded', function() {
+      const toc = document.querySelector('.toc');
+      const heroSection = document.querySelector('.hero');
+      
+      // Initially hide TOC
+      if (toc) {
+        toc.style.display = 'none';
+      }
+      
+      // Show TOC when scrolling past hero section
+      window.addEventListener('scroll', function() {
+        if (!toc || !heroSection) return;
+        
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.pageYOffset;
+        
+        if (scrollPosition > heroBottom - 100) {
+          toc.style.display = 'block';
+        } else {
+          toc.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+
+      <div class="back-link">
+        <a href="./index.html">← Back to UrbanVerse home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</body>
+</html>
+
+

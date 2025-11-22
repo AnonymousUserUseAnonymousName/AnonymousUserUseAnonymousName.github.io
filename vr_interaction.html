@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UrbanVerse VR Interaction Demo">
+  <title>UrbanVerse | VR Interaction</title>
+  <link rel="icon" href="./static/urbanverse_images/urbanverse_logo_0.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <style>
+    :root {
+      --uv-bg: #fdfaf4;
+      --uv-text: #333;
+      --uv-dark: #363636;
+    }
+
+    body {
+      background-color: var(--uv-bg);
+      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .video-page {
+      width: 100%;
+    }
+
+    .intro-block {
+      margin-bottom: 2rem;
+    }
+
+    .intro-block h1,
+    .intro-block p {
+      color: var(--uv-text);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      outline: none;
+      object-fit: contain;
+    }
+
+    .caption {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--uv-dark);
+      text-align: center;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-link a {
+      color: var(--uv-dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .back-link a:hover {
+      border-color: var(--uv-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section video-page">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered intro-block">
+        <h1 class="title is-1">Immersive VR Interaction and Scene Editing in UrbanVerse Scenes</h1>
+        <p class="subtitle is-4">
+          We demonstrate immersive interaction and real-time scene editing in UrbanVerse using a Joystick and VR interface (Meta Quest 3).
+        </p>
+      </div>
+
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline preload="auto">
+          <!-- Replace the src below with the actual video path you want to showcase -->
+          <source src="./static/new_assets/short_vr_demo_og_hq2x.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="back-link">
+        <a href="./index.html">← Back to UrbanVerse home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</body>
+</html>
+
