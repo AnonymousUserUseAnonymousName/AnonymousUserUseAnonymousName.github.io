@@ -1,9 +1,8 @@
+# UrbanVerseProject.github.io
 
-Demo page: https://anonymoususeruseanonymousname.github.io/
 
-Doc page: 
+Main page: https://urbanverseproject.github.io/
 
-https://anonymoususeruseanonymousname.github.io/urbanverse_documentation.html
+Doc page: https://urbanverseproject.github.io/docs/
 
-https://anonymoususeruseanonymousname.github.io/docs/
-
+Doc page: https://urbanverseproject.github.io/urbanverse_docs.html
